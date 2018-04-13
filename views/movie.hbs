@@ -1,9 +1,13 @@
 <h1>Welcome Movie</h1>
 
-{{ each books}}
-
-<h1> {{this.title}} </h1>
-
+{{#each movie}}
+        <img src = "{{this.image}}" alt = "peli"/>
+        <h5>{{this.title}}</h5>
+        <a href="/movie/{{id}}">See more</a>
+        
+{{else}}
+    <p class="empty">No content</p>
 {{/each}}
 
-<a href="/">Go back to list</a>
+
+<a href="/movie_list/{{this._id}}">Go back to list</a>

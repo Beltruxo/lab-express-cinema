@@ -6,28 +6,18 @@ const router = express.Router();
 const Movie = require("../models/Movie");
 
 router.get('/', (req, res, next) => {
-  res.render('movie');
+  
+  Movie.find().then(movie =>{
+    res.render('movie', {movie});
+  })
 });
 
 
 
-router.post("/", (req, res) => {
-  const { title, director, stars, image, description, showtimes } = req.body;
+router.get("/:id", (req, res) => {
 
-  const movie = new Movie({ title, director, stars, image, description, showtimes });
-  movie.save().then(movie => {
-    console.log("Pelis");
-    console.log(movie);
-    res.redirect("/movie",{movie});
+  Movie.findById(req.params.id).then(movie => {
 
-
-    
-  });
-});
-
-router.get("/movie_list", (req, res) => {
-  Movie.find().then(movie => {
-    debug(movie.title);
     res.render("movie_list", { movie });
   });
 });

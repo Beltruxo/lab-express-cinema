@@ -1,7 +1,11 @@
 
 
 <p>Welcome to Movie List{{title}}</p>
-
+{{#with movie}}
+  <img src="{{image}}" alt="">
+  <p>{{title}}</p>
+  <p>{{description}}</p>
+{{/with}}
 
 
 
