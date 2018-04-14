@@ -1,13 +1,16 @@
 
 
-<p>Welcome to Movie List{{title}}</p>
+<h2>Detailed Movie</h2>
 {{#with movie}}
-  <img src="{{image}}" alt="">
-  <p>{{title}}</p>
-  <p>{{description}}</p>
+<div class="detailed">
+  <img src="{{image}}">
+  <h1 class="tit">{{title}}</h1>
+  <p class="des">{{description}}</p>
+</div>
+
 {{/with}}
 
 
 
 
-<a href="/">Go back to HOME</a>
+<a  class = "backHome"href="/">Go back to HOME</a>
