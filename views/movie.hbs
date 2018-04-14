@@ -1,13 +1,13 @@
-<h1>Welcome Movie</h1>
+<h1 class = "tList">Welcome Movie</h1>
 
 {{#each movie}}
+<div class = "todoMovie">
         <img src = "{{this.image}}" alt = "peli"/>
         <h5>{{this.title}}</h5>
-        <a href="/movie/{{id}}">See more</a>
+        <a class = "seeMore" href="/movie/{{id}}">See more</a>
+</div>
+
         
 {{else}}
     <p class="empty">No content</p>
 {{/each}}
-
-
-<a href="/movie_list/{{this._id}}">Go back to list</a>
